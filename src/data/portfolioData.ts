@@ -46,9 +46,11 @@ export const PERSONAL_INFO = {
     }
   ],
   contact: {
-    email: 'joseph.oluwasegun.levi@gmail.com',
+    email: 'levijosephofficial@gmail.com',
     alternateEmail: 'kjw25media@gmail.com',
-    linkedin: 'https://linkedin.com/in/joseph-oluwasegun-levi',
+    whatsapp: 'https://wa.me/qr/3PQN35HLTQLJL1',
+    linkedin: 'https://www.linkedin.com/in/joseph-oluwasegun-levi-937813248',
+    instagram: 'https://www.instagram.com/josefoluwasegun?igsh=a2VhNTZmcW5vZjI0',
     github: 'https://github.com/josephlevi',
     location: 'Open to Global Remote & Relocation Opportunities',
     statusText: 'Available for Product, Creative Tech & AI Engineering Roles'
@@ -1305,9 +1307,9 @@ export const TESTIMONIALS: Testimonial[] = [
 export const RESUME_DATA = {
   name: 'JOSEPH OLUWASEGUN LEVI',
   title: 'Creative Technologist | AI Product Builder | Product Designer | Full Stack Developer',
-  email: 'joseph.oluwasegun.levi@gmail.com',
+  email: 'levijosephofficial@gmail.com',
   alternateEmail: 'kjw25media@gmail.com',
-  linkedin: 'linkedin.com/in/joseph-oluwasegun-levi',
+  linkedin: 'www.linkedin.com/in/joseph-oluwasegun-levi-937813248',
   github: 'github.com/josephlevi',
   summary:
     'Multidisciplinary Creative Technologist with a rich foundation in Graphic & Motion Design, evolving into full-stack engineering and 0-to-1 AI product building. Proven track record conceptualizing and architecting SEEMIGO (AI-powered travel platform), engineering typed frontends with Next.js/React, configuring cloud backends with Supabase/PostgreSQL, orchestrating LLM prompt workflows, and driving creative brand direction across international organizations.',
