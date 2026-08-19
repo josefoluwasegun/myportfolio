@@ -123,7 +123,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
           </div>
 
           {/* Professional Summary */}
-          <div>
+          <div className="resume-section-block">
             <h2 className="text-xs font-mono font-bold text-indigo-400 print:text-indigo-800 uppercase tracking-widest mb-3">
               Professional Summary
             </h2>
@@ -133,7 +133,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
           </div>
 
           {/* Core Competencies */}
-          <div>
+          <div className="resume-section-block">
             <h2 className="text-xs font-mono font-bold text-indigo-400 print:text-indigo-800 uppercase tracking-widest mb-3">
               Core Competencies
             </h2>
@@ -158,7 +158,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
 
             <div className="space-y-8">
               {RESUME_DATA.experience.map((exp) => (
-                <div key={exp.company} className="space-y-3">
+                <div key={exp.company} className="space-y-3 resume-experience-item">
                   <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
                     <div>
                       <h3 className="text-base font-bold text-white print:text-black">
@@ -190,13 +190,13 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
           </div>
 
           {/* Technical Toolkit */}
-          <div>
+          <div className="resume-section-block">
             <h2 className="text-xs font-mono font-bold text-indigo-400 print:text-indigo-800 uppercase tracking-widest mb-4">
               Technical & Product Toolkit
             </h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
-              <div className="p-4 rounded-xl bg-slate-950 print:bg-slate-100 border border-slate-800 print:border-slate-300">
+              <div className="p-4 rounded-xl bg-slate-950 print:bg-slate-100 border border-slate-800 print:border-slate-300 resume-toolkit-card">
                 <div className="font-semibold text-white print:text-black mb-1.5">
                   Frontend Engineering
                 </div>
@@ -205,7 +205,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
                 </div>
               </div>
 
-              <div className="p-4 rounded-xl bg-slate-950 print:bg-slate-100 border border-slate-800 print:border-slate-300">
+              <div className="p-4 rounded-xl bg-slate-950 print:bg-slate-100 border border-slate-800 print:border-slate-300 resume-toolkit-card">
                 <div className="font-semibold text-white print:text-black mb-1.5">
                   Backend & Cloud Infrastructure
                 </div>
@@ -214,7 +214,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
                 </div>
               </div>
 
-              <div className="p-4 rounded-xl bg-slate-950 print:bg-slate-100 border border-slate-800 print:border-slate-300">
+              <div className="p-4 rounded-xl bg-slate-950 print:bg-slate-100 border border-slate-800 print:border-slate-300 resume-toolkit-card">
                 <div className="font-semibold text-white print:text-black mb-1.5">
                   AI & Workflow Engineering
                 </div>
@@ -223,7 +223,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
                 </div>
               </div>
 
-              <div className="p-4 rounded-xl bg-slate-950 print:bg-slate-100 border border-slate-800 print:border-slate-300">
+              <div className="p-4 rounded-xl bg-slate-950 print:bg-slate-100 border border-slate-800 print:border-slate-300 resume-toolkit-card">
                 <div className="font-semibold text-white print:text-black mb-1.5">
                   Design Systems, Motion & Creative Direction
                 </div>
