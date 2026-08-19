@@ -24,42 +24,43 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume, onSelectProject }) => 
   const [activeTab, setActiveTab] = useState<'seemigo' | 'architecture' | 'disciplines'>('seemigo');
 
   return (
-    <section id="home" className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
-      {/* Background Gradients & Ambient Glows */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-indigo-600/10 rounded-full blur-3xl pointer-events-none -z-10" />
-      <div className="absolute top-1/3 right-10 w-[400px] h-[300px] bg-sky-500/10 rounded-full blur-3xl pointer-events-none -z-10" />
+    <section id="home" className="relative pt-28 pb-20 md:pt-36 md:pb-28 overflow-hidden bg-[#050811]">
+      {/* Background Gradients & Blue Glow Effects */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-blue-600/15 rounded-full blur-[140px] pointer-events-none -z-10" />
+      <div className="absolute top-1/3 right-0 w-[500px] h-[400px] bg-sky-500/10 rounded-full blur-[120px] pointer-events-none -z-10" />
+      <div className="absolute bottom-10 left-10 w-[400px] h-[300px] bg-indigo-600/10 rounded-full blur-[100px] pointer-events-none -z-10" />
 
       {/* Grid Pattern */}
       <div
-        className="absolute inset-0 opacity-[0.03] pointer-events-none -z-10"
+        className="absolute inset-0 opacity-[0.04] pointer-events-none -z-10"
         style={{
-          backgroundImage: `radial-gradient(#ffffff 1px, transparent 1px)`,
-          backgroundSize: '28px 28px',
+          backgroundImage: `radial-gradient(#3b82f6 1px, transparent 1px)`,
+          backgroundSize: '32px 32px',
         }}
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* Left Column: Personal Brand & Positioning */}
-          <div className="lg:col-span-7 flex flex-col items-start text-left">
+          <div className="lg:col-span-7 flex flex-col items-start text-left z-10">
             {/* Status Pill */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/90 border border-slate-800 text-xs font-mono text-slate-300 mb-6 shadow-sm">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-950/60 border border-blue-800/40 text-xs font-mono text-slate-300 mb-6 shadow-lg shadow-blue-950/30 backdrop-blur-md">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-              <span className="text-emerald-400 font-semibold">{PERSONAL_INFO.primaryTitle}</span>
+              <span className="text-blue-400 font-semibold">{PERSONAL_INFO.primaryTitle}</span>
               <span className="text-slate-600">•</span>
-              <span className="text-slate-400">Available for Opportunities</span>
+              <span className="text-slate-300">Available for Opportunities</span>
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.12] mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.12] mb-6">
               From Ideas to <br className="hidden sm:inline" />
-              <span className="bg-gradient-to-r from-indigo-400 via-sky-300 to-indigo-200 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-400 via-sky-300 to-indigo-300 bg-clip-text text-transparent drop-shadow-sm">
                 Intelligent Digital Products.
               </span>
             </h1>
 
             {/* Supporting Copy */}
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mb-6">
+            <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mb-6 font-normal">
               {PERSONAL_INFO.heroSupporting}
             </p>
 
@@ -68,14 +69,14 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume, onSelectProject }) => 
               {PERSONAL_INFO.supportingTitles.map((title) => (
                 <span
                   key={title}
-                  className="px-3 py-1 text-xs font-medium bg-slate-900/80 text-slate-300 rounded-md border border-slate-800/80"
+                  className="px-3 py-1 text-xs font-medium bg-slate-900/90 text-slate-300 rounded-lg border border-slate-800/80 shadow-sm"
                 >
                   {title}
                 </span>
               ))}
-              <span className="px-3 py-1 text-xs font-medium bg-indigo-950/40 text-indigo-300 rounded-md border border-indigo-800/50 flex items-center gap-1.5">
-                <Sparkles className="w-3 h-3 text-indigo-400" />
-                Featured: SEEMIGO
+              <span className="px-3 py-1 text-xs font-medium bg-blue-950/50 text-blue-300 rounded-lg border border-blue-800/50 flex items-center gap-1.5 shadow-sm">
+                <Sparkles className="w-3 h-3 text-blue-400" />
+                Flagship AI: SEEMIGO
               </span>
             </div>
 
@@ -88,18 +89,18 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume, onSelectProject }) => 
                   e.preventDefault();
                   document.querySelector('#featured-work')?.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="flex items-center justify-center gap-2.5 px-6 py-3.5 text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-500 rounded-xl shadow-lg shadow-indigo-600/25 transition-all hover:scale-[1.02] active:scale-[0.98] w-full sm:w-auto"
+                className="flex items-center justify-center gap-2.5 px-6 py-3.5 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 rounded-xl shadow-lg shadow-blue-600/30 transition-all hover:scale-[1.02] active:scale-[0.98] w-full sm:w-auto"
               >
-                <span>View My Work</span>
+                <span>Explore Featured Work</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
 
               <button
                 id="hero-download-resume-btn"
                 onClick={onOpenResume}
-                className="flex items-center justify-center gap-2 px-5 py-3.5 text-sm font-medium text-slate-200 bg-slate-900/90 hover:bg-slate-800 hover:text-white rounded-xl border border-slate-700/80 transition-all hover:border-slate-600 w-full sm:w-auto shadow-sm"
+                className="flex items-center justify-center gap-2 px-5 py-3.5 text-sm font-medium text-slate-200 bg-slate-900/90 hover:bg-slate-800 hover:text-white rounded-xl border border-slate-700/80 transition-all hover:border-blue-500/50 w-full sm:w-auto shadow-sm"
               >
-                <FileText className="w-4 h-4 text-indigo-400" />
+                <FileText className="w-4 h-4 text-blue-400" />
                 <span>Download Resume</span>
               </button>
             </div>
@@ -111,7 +112,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume, onSelectProject }) => 
                 <div className="text-xs text-slate-400 mt-0.5">AI Product Builder</div>
               </div>
               <div>
-                <div className="text-xl sm:text-2xl font-bold text-indigo-400 font-mono">Full-Stack</div>
+                <div className="text-xl sm:text-2xl font-bold text-blue-400 font-mono">Full-Stack</div>
                 <div className="text-xs text-slate-400 mt-0.5">Next.js & Supabase</div>
               </div>
               <div>
@@ -121,169 +122,54 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume, onSelectProject }) => 
             </div>
           </div>
 
-          {/* Right Column: Interactive Product Console & Live SEEMIGO Radar */}
-          <div className="lg:col-span-5 w-full">
-            <div className="relative rounded-2xl bg-gradient-to-b from-slate-800/60 to-slate-900/90 p-1 border border-slate-700/80 shadow-2xl shadow-black/60 backdrop-blur-xl">
-              {/* Top Bar with Terminal Dots & Tabs */}
-              <div className="flex items-center justify-between px-4 py-3 bg-slate-950/80 rounded-t-xl border-b border-slate-800">
-                <div className="flex items-center gap-2">
-                  <div className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
-                  <span className="ml-2 text-xs font-mono text-slate-400 flex items-center gap-1.5">
-                    <Terminal className="w-3 h-3 text-indigo-400" />
-                    product-engine.tsx
-                  </span>
+          {/* Right Column: Premium Large Portrait Photograph & Tech Card Composition */}
+          <div className="lg:col-span-5 w-full flex flex-col items-center">
+            <div className="relative w-full max-w-md lg:max-w-none group">
+              {/* Blue Atmospheric Glow behind Portrait */}
+              <div className="absolute -inset-1.5 bg-gradient-to-r from-blue-600 via-sky-500 to-indigo-600 rounded-3xl blur-xl opacity-40 group-hover:opacity-70 transition-opacity duration-700 pointer-events-none" />
+
+              {/* Main Portrait Frame Container */}
+              <div className="relative rounded-3xl bg-[#0a0f1d] border border-blue-500/30 p-2 shadow-2xl shadow-black overflow-hidden backdrop-blur-2xl">
+                {/* Image Container with Gradient Overlay */}
+                <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-slate-950">
+                  <img
+                    src="/joseph-levi.jpg"
+                    alt="Joseph Oluwasegun Levi - Creative Technologist"
+                    className="w-full h-full object-cover object-top filter contrast-[1.03] group-hover:scale-102 transition-transform duration-700"
+                  />
+
+                  {/* Gradient Overlay for Vignette & Visual Integration */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#050811] via-transparent to-transparent opacity-85" />
+                  <div className="absolute inset-0 bg-gradient-to-tr from-blue-950/40 via-transparent to-transparent opacity-60 pointer-events-none" />
+
+                  {/* Floating Overlay Badge (Bottom Left) */}
+                  <div className="absolute bottom-4 left-4 right-4 p-3.5 rounded-2xl bg-slate-950/90 border border-blue-500/30 backdrop-blur-xl shadow-xl space-y-1">
+                    <div className="flex items-center justify-between text-xs">
+                      <span className="font-bold text-white tracking-tight">{PERSONAL_INFO.name}</span>
+                      <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-blue-600/30 text-blue-300 border border-blue-500/40 font-medium">
+                        CREATIVE TECH
+                      </span>
+                    </div>
+                    <p className="text-[11px] text-slate-300 font-mono">
+                      AI Product Builder • Full Stack Engineer • Designer
+                    </p>
+                  </div>
                 </div>
 
-                <div className="flex items-center gap-1 bg-slate-900 p-0.5 rounded-lg border border-slate-800 text-[11px] font-mono">
-                  <button
-                    onClick={() => setActiveTab('seemigo')}
-                    className={`px-2.5 py-1 rounded transition-colors ${
-                      activeTab === 'seemigo' ? 'bg-indigo-600 text-white font-medium' : 'text-slate-400 hover:text-slate-200'
-                    }`}
-                  >
-                    SEEMIGO
-                  </button>
-                  <button
-                    onClick={() => setActiveTab('architecture')}
-                    className={`px-2.5 py-1 rounded transition-colors ${
-                      activeTab === 'architecture' ? 'bg-indigo-600 text-white font-medium' : 'text-slate-400 hover:text-slate-200'
-                    }`}
-                  >
-                    Pipeline
-                  </button>
-                </div>
-              </div>
-
-              {/* Console Body */}
-              <div className="p-5 bg-[#0d131f]/95 rounded-b-xl min-h-[380px] flex flex-col justify-between">
-                {activeTab === 'seemigo' && (
-                  <div className="space-y-4 animate-in fade-in duration-300">
-                    {/* Badge & Title */}
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2">
-                        <div className="w-8 h-8 rounded-lg bg-indigo-600/20 border border-indigo-500/40 flex items-center justify-center text-indigo-400">
-                          <Compass className="w-4 h-4" />
-                        </div>
-                        <div>
-                          <div className="text-sm font-semibold text-white flex items-center gap-2">
-                            SEEMIGO
-                            <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-300 border border-amber-500/30">
-                              Active Private Dev
-                            </span>
-                          </div>
-                          <div className="text-xs text-slate-400">AI Travel & Application Platform</div>
-                        </div>
-                      </div>
-                      <span className="text-xs font-mono text-indigo-400">v2.4-preview</span>
-                    </div>
-
-                    {/* Simulated Live System Card */}
-                    <div className="bg-slate-900/90 rounded-xl p-3.5 border border-slate-800 space-y-2.5">
-                      <div className="flex items-center justify-between text-xs text-slate-300">
-                        <span className="flex items-center gap-1.5 text-indigo-300 font-mono">
-                          <Zap className="w-3.5 h-3.5 text-amber-400" />
-                          Deterministic AI Workflow
-                        </span>
-                        <span className="text-emerald-400 text-[11px] font-mono flex items-center gap-1">
-                          <CheckCircle2 className="w-3 h-3" /> 100% Zod Verified
-                        </span>
-                      </div>
-
-                      <div className="space-y-2 font-mono text-[11px] text-slate-400 bg-slate-950 p-3 rounded-lg border border-slate-800/80">
-                        <div className="text-slate-500">// Structured output pipeline (No raw chatbot hallucination)</div>
-                        <div className="text-slate-300">
-                          <span className="text-purple-400">const</span> <span className="text-sky-300">TravelPayload</span> = await <span className="text-indigo-400">orchestrateTravelNode</span>(&#123;
-                        </div>
-                        <div className="pl-4 text-slate-300">
-                          destination: <span className="text-emerald-300">"Schengen Area / FR"</span>,
-                        </div>
-                        <div className="pl-4 text-slate-300">
-                          applicantType: <span className="text-emerald-300">"Remote Professional"</span>,
-                        </div>
-                        <div className="pl-4 text-slate-300">
-                          strictValidation: <span className="text-amber-300">true</span>
-                        </div>
-                        <div className="text-slate-300">&#125;);</div>
-                      </div>
-
-                      {/* Live Output Simulation Pill */}
-                      <div className="grid grid-cols-2 gap-2 pt-1">
-                        <div className="bg-slate-800/60 p-2 rounded-lg border border-slate-700/50">
-                          <div className="text-[10px] text-slate-400">Visa Requirements</div>
-                          <div className="text-xs font-semibold text-emerald-400 flex items-center gap-1 mt-0.5">
-                            <ShieldCheck className="w-3 h-3" /> 5 Nodes Verified
-                          </div>
-                        </div>
-                        <div className="bg-slate-800/60 p-2 rounded-lg border border-slate-700/50">
-                          <div className="text-[10px] text-slate-400">Itinerary Generator</div>
-                          <div className="text-xs font-semibold text-sky-400 flex items-center gap-1 mt-0.5">
-                            <Layers className="w-3 h-3" /> 14-Day Synced
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Trigger deep dive */}
-                    <button
-                      onClick={() => onSelectProject('seemigo')}
-                      className="w-full py-2 px-3 text-xs font-medium text-indigo-300 bg-indigo-950/40 hover:bg-indigo-900/50 border border-indigo-800/50 rounded-lg flex items-center justify-center gap-1.5 transition-colors"
-                    >
-                      <span>Explore SEEMIGO Deep Case Study</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </button>
+                {/* Console Terminal Tabs at Bottom of Portrait Frame */}
+                <div className="mt-2 p-3 bg-slate-950/90 rounded-2xl border border-slate-800 flex items-center justify-between">
+                  <div className="flex items-center gap-2 text-xs font-mono text-slate-300">
+                    <Terminal className="w-3.5 h-3.5 text-blue-400" />
+                    <span>system.active: <span className="text-emerald-400">SEEMIGO Engine</span></span>
                   </div>
-                )}
 
-                {activeTab === 'architecture' && (
-                  <div className="space-y-3 font-mono text-xs animate-in fade-in duration-300">
-                    <div className="text-slate-400 text-[11px] pb-2 border-b border-slate-800 flex items-center justify-between">
-                      <span>Pipeline: 0-to-1 Product Flow</span>
-                      <span className="text-emerald-400">● Nominal</span>
-                    </div>
-
-                    <div className="space-y-2.5">
-                      <div className="p-2.5 rounded-lg bg-slate-900/90 border border-slate-800 flex items-start gap-2.5">
-                        <div className="p-1.5 rounded bg-indigo-600/20 text-indigo-400 mt-0.5">
-                          <Layout className="w-3.5 h-3.5" />
-                        </div>
-                        <div>
-                          <div className="text-white font-semibold text-xs">1. UI & State Layer</div>
-                          <div className="text-slate-400 text-[11px]">Next.js / React, responsive Tailwind, optimistic state.</div>
-                        </div>
-                      </div>
-
-                      <div className="p-2.5 rounded-lg bg-slate-900/90 border border-slate-800 flex items-start gap-2.5">
-                        <div className="p-1.5 rounded bg-sky-600/20 text-sky-400 mt-0.5">
-                          <Cpu className="w-3.5 h-3.5" />
-                        </div>
-                        <div>
-                          <div className="text-white font-semibold text-xs">2. AI Workflow Engine</div>
-                          <div className="text-slate-400 text-[11px]">Prompt chaining, strict schema validation, context grounding.</div>
-                        </div>
-                      </div>
-
-                      <div className="p-2.5 rounded-lg bg-slate-900/90 border border-slate-800 flex items-start gap-2.5">
-                        <div className="p-1.5 rounded bg-emerald-600/20 text-emerald-400 mt-0.5">
-                          <Database className="w-3.5 h-3.5" />
-                        </div>
-                        <div>
-                          <div className="text-white font-semibold text-xs">3. Data & Auth Layer</div>
-                          <div className="text-slate-400 text-[11px]">Supabase PostgreSQL, Row Level Security, Edge caching.</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                )}
-
-                {/* Footer of console */}
-                <div className="pt-3 border-t border-slate-800 flex items-center justify-between text-[11px] text-slate-400 font-mono">
-                  <span className="flex items-center gap-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                    Production Ready
-                  </span>
-                  <span>Joseph Oluwasegun Levi</span>
+                  <button
+                    onClick={() => onSelectProject('seemigo')}
+                    className="text-[11px] font-mono px-2.5 py-1 rounded bg-blue-950 text-blue-300 hover:bg-blue-900/60 border border-blue-800/60 transition-colors flex items-center gap-1"
+                  >
+                    <span>View System</span>
+                    <ArrowRight className="w-3 h-3" />
+                  </button>
                 </div>
               </div>
             </div>

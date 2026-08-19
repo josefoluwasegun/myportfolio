@@ -49,13 +49,13 @@ export const CreativeWorkSection: React.FC<CreativeWorkSectionProps> = ({ onSele
   });
 
   return (
-    <section id="creative-work" className="py-24 bg-[#0b0f17] relative border-t border-slate-800/80">
+    <section id="creative-work" className="py-24 bg-[#050811] relative border-t border-slate-800/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-950/70 border border-indigo-800/50 text-xs font-mono text-indigo-300 mb-4">
-              <Sparkles className="w-3.5 h-3.5 text-indigo-400" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-950/60 border border-blue-800/40 text-xs font-mono text-blue-300 mb-4">
+              <Sparkles className="w-3.5 h-3.5 text-blue-400" />
               <span>Design & Visual Archive</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">

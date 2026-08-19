@@ -965,8 +965,9 @@ export const MOTION_PROJECTS: MotionProject[] = [
     tools: ['Adobe After Effects', 'Video Editing'],
     duration: 'Broadcast Stinger',
     year: '2023',
+    videoUrl: 'https://cdn-media.f-static.net/uploads/2663294/normal_67d6144fcba9e.mp4',
     posterUrl: 'https://files.cdn-files-a.com/uploads/2663294/normal_67d6144fcba9e-thumbnail.jpg',
-    posterGradient: 'from-sky-600/50 via-slate-900 to-slate-950',
+    posterGradient: 'from-sky-600/50 via-blue-900 to-slate-950',
     highlight: 'Clean corporate motion branding designed for official video presentations.'
   },
   {
@@ -979,8 +980,9 @@ export const MOTION_PROJECTS: MotionProject[] = [
     tools: ['Adobe After Effects', 'Motion Graphics'],
     duration: 'Motion Asset',
     year: '2023',
+    videoUrl: 'https://cdn-media.f-static.net/uploads/2663294/normal_67146a0fd88cd.mp4',
     posterUrl: 'https://files.cdn-files-a.com/uploads/2663294/normal_67146a0fd88cd-thumbnail.jpg',
-    posterGradient: 'from-cyan-600/50 via-slate-900 to-slate-950',
+    posterGradient: 'from-blue-500/50 via-indigo-950 to-slate-950',
     highlight: 'High-impact lower thirds and transitions for multi-channel video content.'
   },
   {
@@ -993,8 +995,9 @@ export const MOTION_PROJECTS: MotionProject[] = [
     tools: ['Adobe After Effects', 'Premiere Pro', 'Kinetic Typography'],
     duration: '0:30',
     year: '2023',
+    videoUrl: 'https://cdn-media.f-static.net/uploads/2663294/normal_68b02cd4254de.mp4',
     posterUrl: 'https://files.cdn-files-a.com/uploads/2663294/normal_68b02cd4254de-thumbnail.jpg',
-    posterGradient: 'from-fuchsia-600/50 via-purple-950 to-slate-950',
+    posterGradient: 'from-indigo-600/50 via-blue-950 to-slate-950',
     highlight: 'Engineered high-retention visual hooks that maximized ad conversion on mobile feeds.'
   },
   {
@@ -1007,8 +1010,9 @@ export const MOTION_PROJECTS: MotionProject[] = [
     tools: ['Adobe After Effects', 'Premiere Pro'],
     duration: '0:45',
     year: '2023',
+    videoUrl: 'https://cdn-media.f-static.net/uploads/2663294/normal_68b02d1d2b513.mp4',
     posterUrl: 'https://files.cdn-files-a.com/uploads/2663294/normal_68b02d1d2b513-thumbnail.jpg',
-    posterGradient: 'from-amber-600/50 via-rose-950 to-slate-950',
+    posterGradient: 'from-blue-600/50 via-slate-900 to-slate-950',
     highlight: 'Punchy visual rhythm timed to upbeat audio track.'
   },
   {
@@ -1021,8 +1025,9 @@ export const MOTION_PROJECTS: MotionProject[] = [
     tools: ['Adobe After Effects', 'Premiere Pro', 'Motion Typography'],
     duration: '0:30',
     year: '2023',
+    videoUrl: 'https://cdn-media.f-static.net/uploads/2663294/normal_68b02d47d7896.mp4',
     posterUrl: 'https://files.cdn-files-a.com/uploads/2663294/normal_68b02d47d7896-thumbnail.jpg',
-    posterGradient: 'from-emerald-600/50 via-teal-950 to-slate-950',
+    posterGradient: 'from-sky-500/50 via-indigo-950 to-slate-950',
     highlight: 'High-contrast typography callouts designed for instant mobile legibility.'
   },
   {
@@ -1035,8 +1040,9 @@ export const MOTION_PROJECTS: MotionProject[] = [
     tools: ['Adobe After Effects', 'Premiere Pro'],
     duration: '0:30',
     year: '2023',
+    videoUrl: 'https://cdn-media.f-static.net/uploads/2663294/normal_68b02d79d904e.mp4',
     posterUrl: 'https://files.cdn-files-a.com/uploads/2663294/normal_68b02d79d904e-thumbnail.jpg',
-    posterGradient: 'from-indigo-600/50 via-blue-950 to-slate-950',
+    posterGradient: 'from-blue-600/50 via-blue-950 to-slate-950',
     highlight: 'Clean visual pacing and motion graphics tailored for digital ad placement.'
   }
 ];
