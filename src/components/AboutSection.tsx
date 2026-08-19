@@ -26,12 +26,12 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenResume }) => {
   const stageIcons = [Palette, Film, Layout, Sparkles, Code2, Rocket];
 
   return (
-    <section id="about" className="py-24 bg-[#0d121d] relative border-t border-slate-800/80">
+    <section id="about" className="py-24 bg-[#080d1a] relative border-t border-slate-800/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-950/60 border border-indigo-800/50 text-xs font-mono text-indigo-300 mb-4">
-            <Sparkles className="w-3.5 h-3.5 text-indigo-400" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-950/60 border border-blue-800/40 text-xs font-mono text-blue-300 mb-4">
+            <Sparkles className="w-3.5 h-3.5 text-blue-400" />
             <span>Multidisciplinary Product Craft</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-6">

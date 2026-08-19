@@ -72,7 +72,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
       id="main-navbar"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-[#0b0f17]/90 backdrop-blur-md border-b border-slate-800/80 py-3 shadow-xl shadow-black/20'
+          ? 'bg-[#050811]/90 backdrop-blur-md border-b border-slate-800/80 py-3 shadow-xl shadow-black/40'
           : 'bg-transparent py-4'
       }`}
     >
@@ -84,11 +84,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
           className="group flex items-center gap-3"
           id="nav-brand-logo"
         >
-          <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-gradient-to-tr from-indigo-600 via-indigo-500 to-sky-400 flex items-center justify-center font-bold text-white text-xs sm:text-sm shadow-md shadow-indigo-500/20 group-hover:scale-105 transition-transform flex-shrink-0">
+          <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-gradient-to-tr from-blue-600 via-sky-500 to-indigo-400 flex items-center justify-center font-bold text-white text-xs sm:text-sm shadow-md shadow-blue-500/20 group-hover:scale-105 transition-transform flex-shrink-0">
             JL
           </div>
           <div className="flex flex-col">
-            <span className="text-xs sm:text-sm font-semibold tracking-tight text-white group-hover:text-indigo-300 transition-colors">
+            <span className="text-xs sm:text-sm font-semibold tracking-tight text-white group-hover:text-blue-300 transition-colors">
               {PERSONAL_INFO.name}
             </span>
             <span className="text-[11px] text-slate-400 font-mono tracking-wider flex items-center gap-1.5">
@@ -99,7 +99,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
         </a>
 
         {/* Desktop Nav */}
-        <nav className="hidden xl:flex items-center gap-1 bg-slate-900/60 p-1.5 rounded-full border border-slate-800/80 backdrop-blur-md shadow-inner">
+        <nav className="hidden xl:flex items-center gap-1 bg-[#0a0f1d]/80 p-1.5 rounded-full border border-slate-800/80 backdrop-blur-md shadow-inner">
           {navLinks.map((link) => {
             const sectionId = link.href.replace('#', '');
             const isActive = activeSection === sectionId;
@@ -110,7 +110,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
                 onClick={(e) => handleNavClick(e, link.href)}
                 className={`px-3 py-1.5 text-xs font-medium rounded-full transition-all duration-200 ${
                   isActive
-                    ? 'bg-indigo-600 text-white shadow-sm shadow-indigo-600/30 font-semibold'
+                    ? 'bg-blue-600 text-white shadow-sm shadow-blue-600/30 font-semibold'
                     : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
                 }`}
               >
@@ -125,9 +125,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
           <button
             id="nav-resume-btn"
             onClick={onOpenResume}
-            className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-slate-200 bg-slate-800/80 hover:bg-slate-700/80 hover:text-white rounded-lg border border-slate-700 transition-all shadow-sm"
+            className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-slate-200 bg-slate-900/90 hover:bg-slate-800 hover:text-white rounded-lg border border-slate-700/80 transition-all shadow-sm"
           >
-            <FileText className="w-3.5 h-3.5 text-indigo-400" />
+            <FileText className="w-3.5 h-3.5 text-blue-400" />
             <span>Resume</span>
           </button>
 
@@ -135,7 +135,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
             id="nav-contact-cta"
             href="#contact"
             onClick={(e) => handleNavClick(e, '#contact')}
-            className="flex items-center gap-1 px-3.5 py-1.5 text-xs font-semibold text-white bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 rounded-lg shadow-md shadow-indigo-600/20 transition-all hover:shadow-indigo-600/30 hover:scale-[1.02]"
+            className="flex items-center gap-1 px-3.5 py-1.5 text-xs font-semibold text-white bg-gradient-to-r from-blue-600 to-sky-600 hover:from-blue-500 hover:to-sky-500 rounded-lg shadow-md shadow-blue-600/20 transition-all hover:shadow-blue-600/30 hover:scale-[1.02]"
           >
             <span>Get in Touch</span>
             <ArrowUpRight className="w-3.5 h-3.5" />

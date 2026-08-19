@@ -33,7 +33,7 @@ export default function App() {
     : null;
 
   return (
-    <div className="min-h-screen bg-[#0b0f17] text-slate-100 font-sans selection:bg-indigo-500/30 selection:text-indigo-200">
+    <div className="min-h-screen bg-[#050811] text-slate-100 font-sans selection:bg-blue-500/30 selection:text-blue-200">
       {/* Top Fixed Navigation */}
       <Navbar onOpenResume={() => setResumeModalOpen(true)} />
 

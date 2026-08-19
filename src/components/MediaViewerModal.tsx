@@ -122,8 +122,22 @@ export const MediaViewerModal: React.FC<MediaViewerModalProps> = ({ item, type, 
                   allowFullScreen
                 />
               </div>
+            ) : isMotion && motionItem?.videoUrl ? (
+              /* HTML5 Video Player for Motion Ads & Effect Assets */
+              <div className="relative w-full aspect-video bg-black flex items-center justify-center overflow-hidden rounded-xl">
+                <video
+                  src={motionItem.videoUrl}
+                  poster={motionItem.posterUrl}
+                  controls
+                  autoPlay
+                  loop
+                  playsInline
+                  preload="metadata"
+                  className="w-full h-full object-contain"
+                />
+              </div>
             ) : isMotion ? (
-              /* Motion Video Poster with Interactive Play Trigger */
+              /* Motion Video Poster with YouTube Stream Trigger */
               <div className="relative w-full aspect-video flex items-center justify-center group overflow-hidden bg-slate-950">
                 {motionItem?.posterUrl && (
                   <img
@@ -142,13 +156,13 @@ export const MediaViewerModal: React.FC<MediaViewerModalProps> = ({ item, type, 
                         setIsPlayingVideo(true);
                       }
                     }}
-                    className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white flex items-center justify-center shadow-xl shadow-indigo-600/50 hover:scale-110 transition-all cursor-pointer"
+                    className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-blue-600 hover:bg-blue-500 text-white flex items-center justify-center shadow-xl shadow-blue-600/50 hover:scale-110 transition-all cursor-pointer"
                     aria-label="Play video"
                   >
                     <Play className="w-8 h-8 fill-current ml-1" />
                   </button>
                   <span className="text-xs font-mono text-slate-200 bg-slate-900/90 px-3 py-1 rounded-full border border-slate-700">
-                    {hasYouTubeVideo ? 'Click to Stream Video' : 'Motion Design Asset Reel'}
+                    {hasYouTubeVideo ? 'Click to Stream YouTube Video' : 'Motion Design Asset'}
                   </span>
                 </div>
               </div>

@@ -25,20 +25,20 @@ export const FeaturedWorkSection: React.FC<FeaturedWorkSectionProps> = ({ onSele
   const otherProjects = PROJECTS.filter((p) => p.id !== 'seemigo');
 
   return (
-    <section id="featured-work" className="py-24 bg-[#0b0f17] relative">
+    <section id="featured-work" className="py-24 bg-[#050811] relative border-t border-slate-800/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-950/70 border border-indigo-800/50 text-xs font-mono text-indigo-300 mb-4">
-              <Sparkles className="w-3.5 h-3.5 text-indigo-400" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-950/60 border border-blue-800/40 text-xs font-mono text-blue-300 mb-4">
+              <Sparkles className="w-3.5 h-3.5 text-blue-400" />
               <span>Selected Portfolio Work</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
               Featured Work & Systems
             </h2>
           </div>
-          <p className="text-sm sm:text-base text-slate-400 max-w-md">
+          <p className="text-sm sm:text-base text-slate-300 max-w-md">
             Real products, AI architectures, digital growth campaigns, and brand systems created to solve substantive business challenges.
           </p>
         </div>
@@ -47,9 +47,9 @@ export const FeaturedWorkSection: React.FC<FeaturedWorkSectionProps> = ({ onSele
         {/* FLAGSHIP PROJECT 01: SEEMIGO */}
         {/* ========================================================================= */}
         <div className="mb-20">
-          <div className="relative rounded-3xl bg-gradient-to-b from-slate-800/60 via-slate-900/90 to-[#0d131f] border border-indigo-500/30 p-6 sm:p-10 lg:p-12 shadow-2xl shadow-indigo-950/40 overflow-hidden">
+          <div className="relative rounded-3xl bg-gradient-to-b from-[#0a1226]/80 via-[#0d152a]/90 to-[#050811] border border-blue-500/30 p-6 sm:p-10 lg:p-12 shadow-2xl shadow-blue-950/40 overflow-hidden">
             {/* Ambient Corner Glow */}
-            <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-600/10 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/15 rounded-full blur-3xl pointer-events-none" />
 
             {/* Top Meta Strip */}
             <div className="flex flex-wrap items-center justify-between gap-4 pb-6 mb-8 border-b border-slate-800">

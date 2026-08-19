@@ -20,13 +20,13 @@ interface MotionDesignSectionProps {
 
 export const MotionDesignSection: React.FC<MotionDesignSectionProps> = ({ onSelectMotion }) => {
   return (
-    <section id="motion-design" className="py-24 bg-[#0d121d] relative border-t border-slate-800/80">
+    <section id="motion-design" className="py-24 bg-[#080d1a] relative border-t border-slate-800/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-950/70 border border-indigo-800/50 text-xs font-mono text-indigo-300 mb-4">
-              <Film className="w-3.5 h-3.5 text-indigo-400" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-950/60 border border-blue-800/40 text-xs font-mono text-blue-300 mb-4">
+              <Film className="w-3.5 h-3.5 text-blue-400" />
               <span>Dynamic Storytelling</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
@@ -48,8 +48,19 @@ export const MotionDesignSection: React.FC<MotionDesignSectionProps> = ({ onSele
             >
               <div>
                 {/* Real Video / Poster Frame Screen */}
-                <div className="relative aspect-video rounded-2xl bg-black border border-slate-800 overflow-hidden mb-6 group-hover:border-slate-700 transition-colors flex items-center justify-center">
-                  {project.posterUrl ? (
+                <div className="relative aspect-video rounded-2xl bg-black border border-slate-800 overflow-hidden mb-6 group-hover:border-indigo-500/50 transition-colors flex items-center justify-center">
+                  {project.videoUrl ? (
+                    <video
+                      src={project.videoUrl}
+                      poster={project.posterUrl}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="metadata"
+                      className="w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+                    />
+                  ) : project.posterUrl ? (
                     <img
                       src={project.posterUrl}
                       alt={project.title}
@@ -64,24 +75,24 @@ export const MotionDesignSection: React.FC<MotionDesignSectionProps> = ({ onSele
                   )}
 
                   {/* Dark Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/50" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/40 group-hover:via-transparent transition-colors pointer-events-none" />
 
                   {/* Play Button Trigger */}
                   <div className="relative z-10 flex flex-col items-center gap-3">
-                    <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-indigo-600/90 hover:bg-indigo-500 text-white flex items-center justify-center shadow-xl shadow-indigo-600/40 group-hover:scale-110 transition-transform">
-                      <Play className="w-7 h-7 fill-current translate-x-0.5" />
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-blue-600/90 hover:bg-blue-500 text-white flex items-center justify-center shadow-xl shadow-blue-600/40 group-hover:scale-110 transition-transform">
+                      <Play className="w-6 h-6 fill-current translate-x-0.5" />
                     </div>
 
                     <span className="text-[11px] font-mono text-slate-200 bg-black/80 backdrop-blur-md px-3 py-1 rounded-full border border-slate-700 flex items-center gap-1.5 shadow-md">
                       {project.youtubeId ? (
                         <>
                           <Tv className="w-3 h-3 text-red-400" />
-                          <span>Watch Video Stream</span>
+                          <span>Watch YouTube Video</span>
                         </>
                       ) : (
                         <>
-                          <Film className="w-3 h-3 text-indigo-400" />
-                          <span>Motion Asset Preview</span>
+                          <Film className="w-3 h-3 text-blue-400" />
+                          <span>Expand & Inspect Motion</span>
                         </>
                       )}
                     </span>
