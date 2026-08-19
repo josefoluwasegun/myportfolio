@@ -1,1 +1,59 @@
 @import "tailwindcss";
+
+@media print {
+  /* Hide all background portfolio layout elements */
+  header,
+  nav,
+  main,
+  footer {
+    display: none !important;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  /* Modal backdrop print resets */
+  #resume-modal-backdrop {
+    position: static !important;
+    inset: auto !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+  }
+
+  #resume-modal-backdrop > div {
+    position: static !important;
+    max-width: 100% !important;
+    max-height: none !important;
+    height: auto !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    overflow: visible !important;
+    border-radius: 0 !important;
+  }
+
+  /* Ensure content wrapper fills height and doesn't scroll */
+  #resume-modal-backdrop .overflow-y-auto {
+    overflow: visible !important;
+    max-height: none !important;
+    height: auto !important;
+  }
+
+  /* Prevent awkward page breaks within individual items, not entire sections */
+  .resume-experience-item,
+  .resume-section-block,
+  .resume-toolkit-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
