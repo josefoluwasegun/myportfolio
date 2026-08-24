@@ -26,9 +26,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume, onSelectProject }) => 
   return (
     <section id="home" className="relative pt-28 pb-20 md:pt-36 md:pb-28 overflow-hidden bg-[#050811]">
       {/* Background Gradients & Blue Glow Effects */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-blue-600/15 rounded-full blur-[140px] pointer-events-none -z-10" />
-      <div className="absolute top-1/3 right-0 w-[500px] h-[400px] bg-sky-500/10 rounded-full blur-[120px] pointer-events-none -z-10" />
-      <div className="absolute bottom-10 left-10 w-[400px] h-[300px] bg-indigo-600/10 rounded-full blur-[100px] pointer-events-none -z-10" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-blue-600/15 rounded-full blur-[140px] pointer-events-none -z-10 transform-gpu [backface-visibility:hidden] [transform:translateZ(0)]" />
+      <div className="absolute top-1/3 right-0 w-[500px] h-[400px] bg-sky-500/10 rounded-full blur-[120px] pointer-events-none -z-10 transform-gpu [backface-visibility:hidden] [transform:translateZ(0)]" />
+      <div className="absolute bottom-10 left-10 w-[400px] h-[300px] bg-indigo-600/10 rounded-full blur-[100px] pointer-events-none -z-10 transform-gpu [backface-visibility:hidden] [transform:translateZ(0)]" />
 
       {/* Grid Pattern */}
       <div
@@ -89,7 +89,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume, onSelectProject }) => 
                   e.preventDefault();
                   document.querySelector('#featured-work')?.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="flex items-center justify-center gap-2.5 px-6 py-3.5 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 rounded-xl shadow-lg shadow-blue-600/30 transition-all hover:scale-[1.02] active:scale-[0.98] w-full sm:w-auto"
+                className="flex items-center justify-center gap-2.5 px-6 py-3.5 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 rounded-xl shadow-lg shadow-blue-600/30 transition-all md:hover:scale-[1.02] active:scale-[0.98] w-full sm:w-auto transform-gpu"
               >
                 <span>Explore Featured Work</span>
                 <ArrowRight className="w-4 h-4" />

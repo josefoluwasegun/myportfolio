@@ -47,9 +47,9 @@ export const FeaturedWorkSection: React.FC<FeaturedWorkSectionProps> = ({ onSele
         {/* FLAGSHIP PROJECT 01: SEEMIGO */}
         {/* ========================================================================= */}
         <div className="mb-20">
-          <div className="relative rounded-3xl bg-gradient-to-b from-[#0a1226]/80 via-[#0d152a]/90 to-[#050811] border border-blue-500/30 p-6 sm:p-10 lg:p-12 shadow-2xl shadow-blue-950/40 overflow-hidden">
+          <div className="relative rounded-3xl bg-gradient-to-b from-[#0a1226]/80 via-[#0d152a]/90 to-[#050811] border border-blue-500/30 p-6 sm:p-10 lg:p-12 shadow-2xl shadow-blue-950/40 overflow-hidden transform-gpu">
             {/* Ambient Corner Glow */}
-            <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/15 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/15 rounded-full blur-3xl pointer-events-none transform-gpu [backface-visibility:hidden] [transform:translateZ(0)]" />
 
             {/* Top Meta Strip */}
             <div className="flex flex-wrap items-center justify-between gap-4 pb-6 mb-8 border-b border-slate-800">
@@ -125,7 +125,7 @@ export const FeaturedWorkSection: React.FC<FeaturedWorkSectionProps> = ({ onSele
                   <button
                     id="seemigo-view-case-study-btn"
                     onClick={() => onSelectProject('seemigo')}
-                    className="flex items-center gap-2 px-6 py-3.5 text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-500 rounded-xl shadow-lg shadow-indigo-600/25 transition-all hover:scale-[1.02]"
+                    className="flex items-center gap-2 px-6 py-3.5 text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-500 rounded-xl shadow-lg shadow-indigo-600/25 transition-all md:hover:scale-[1.02] active:scale-[0.98] transform-gpu"
                   >
                     <span>Read Full SEEMIGO Case Study</span>
                     <ArrowRight className="w-4 h-4" />
