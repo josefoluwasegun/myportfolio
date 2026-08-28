@@ -11,16 +11,18 @@ import {
   TrendingUp,
   Award,
   Calendar,
-  Lock
+  Lock,
+  LayoutDashboard
 } from 'lucide-react';
 import { PROJECTS } from '../data/portfolioData';
 import { Project } from '../types';
 
 interface FeaturedWorkSectionProps {
   onSelectProject: (projectId: string) => void;
+  onOpenAdminDesk?: () => void;
 }
 
-export const FeaturedWorkSection: React.FC<FeaturedWorkSectionProps> = ({ onSelectProject }) => {
+export const FeaturedWorkSection: React.FC<FeaturedWorkSectionProps> = ({ onSelectProject, onOpenAdminDesk }) => {
   const seemigoProject = PROJECTS.find((p) => p.id === 'seemigo')!;
   const otherProjects = PROJECTS.filter((p) => p.id !== 'seemigo');
 
@@ -125,14 +127,25 @@ export const FeaturedWorkSection: React.FC<FeaturedWorkSectionProps> = ({ onSele
                   <button
                     id="seemigo-view-case-study-btn"
                     onClick={() => onSelectProject('seemigo')}
-                    className="flex items-center gap-2 px-6 py-3.5 text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-500 rounded-xl shadow-lg shadow-indigo-600/25 transition-all hover:scale-[1.02]"
+                    className="flex items-center gap-2 px-6 py-3.5 text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-500 rounded-xl shadow-lg shadow-indigo-600/25 transition-all md:hover:scale-[1.02]"
                   >
                     <span>Read Full SEEMIGO Case Study</span>
                     <ArrowRight className="w-4 h-4" />
                   </button>
 
+                  {onOpenAdminDesk && (
+                    <button
+                      id="seemigo-app-desk-btn"
+                      onClick={onOpenAdminDesk}
+                      className="flex items-center gap-2 px-5 py-3.5 text-sm font-semibold text-indigo-300 bg-indigo-950/80 hover:bg-indigo-900 border border-indigo-700/60 rounded-xl transition-all md:hover:scale-[1.02]"
+                    >
+                      <LayoutDashboard className="w-4 h-4 text-indigo-400" />
+                      <span>Application Desk & Document Generator</span>
+                    </button>
+                  )}
+
                   <div className="text-xs text-slate-400 font-mono">
-                    Includes Architecture, UI Decisions & AI Workflow
+                    Internal Application Desk & Document Generator (Specialists Only)
                   </div>
                 </div>
               </div>

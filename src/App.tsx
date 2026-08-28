@@ -16,13 +16,16 @@ import { CaseStudyModal } from './components/CaseStudyModal';
 import { ArticleModal } from './components/ArticleModal';
 import { ResumeModal } from './components/ResumeModal';
 import { MediaViewerModal } from './components/MediaViewerModal';
+import { AdminDashboardModal } from './components/AdminDashboardModal';
 import { PROJECTS, ARTICLES } from './data/portfolioData';
-import { Project, Article, CreativeItem, MotionProject } from './types';
+import { Project, Article, CreativeItem, MotionProject, UserRole } from './types';
 
 export default function App() {
   const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null);
   const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
   const [resumeModalOpen, setResumeModalOpen] = useState<boolean>(false);
+  const [adminModalOpen, setAdminModalOpen] = useState<boolean>(false);
+  const [currentUserRole, setCurrentUserRole] = useState<UserRole>('admin');
   const [selectedMediaItem, setSelectedMediaItem] = useState<{
     item: CreativeItem | MotionProject | null;
     type: 'creative' | 'motion' | null;
@@ -35,7 +38,10 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[#050811] text-slate-100 font-sans selection:bg-blue-500/30 selection:text-blue-200">
       {/* Top Fixed Navigation */}
-      <Navbar onOpenResume={() => setResumeModalOpen(true)} />
+      <Navbar
+        onOpenResume={() => setResumeModalOpen(true)}
+        onOpenAdminDesk={() => setAdminModalOpen(true)}
+      />
 
       {/* Main Page Flow */}
       <main>
@@ -45,11 +51,14 @@ export default function App() {
           onSelectProject={(id) => setSelectedProjectId(id)}
         />
 
-        {/* 2. About & Career Progression (Graphic -> Motion -> Product -> AI -> Full Stack -> Product Building) */}
+        {/* 2. About & Career Progression */}
         <AboutSection onOpenResume={() => setResumeModalOpen(true)} />
 
         {/* 3. Featured Work (SEEMIGO Flagship + RoutePal, Steadfast, Flyibat) */}
-        <FeaturedWorkSection onSelectProject={(id) => setSelectedProjectId(id)} />
+        <FeaturedWorkSection
+          onSelectProject={(id) => setSelectedProjectId(id)}
+          onOpenAdminDesk={() => setAdminModalOpen(true)}
+        />
 
         {/* 4. Creative Work Archive (Flyibat, Steadfast, XSight, KJW25Media) */}
         <CreativeWorkSection
@@ -106,6 +115,14 @@ export default function App() {
       <ResumeModal
         isOpen={resumeModalOpen}
         onClose={() => setResumeModalOpen(false)}
+      />
+
+      {/* Internal SEEMIGO Admin Dashboard & Application Desk Modal */}
+      <AdminDashboardModal
+        isOpen={adminModalOpen}
+        onClose={() => setAdminModalOpen(false)}
+        currentUserRole={currentUserRole}
+        onSwitchRole={(role) => setCurrentUserRole(role)}
       />
     </div>
   );

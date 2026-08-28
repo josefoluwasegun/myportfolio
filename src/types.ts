@@ -121,3 +121,35 @@ export interface SkillCategory {
     highlight: string;
   }[];
 }
+
+export type UserRole = 'admin' | 'specialist' | 'applicant';
+
+export interface UserProfile {
+  id: string;
+  name: string;
+  email: string;
+  role: UserRole;
+  title: string;
+}
+
+export interface ApplicantContext {
+  id: string;
+  applicantName: string;
+  applicantEmail: string;
+  country: string;
+  university: string;
+  programme: string;
+  applicationType: 'Study Abroad' | 'Visa Processing' | 'Vacation & Travel' | 'Work & Employment';
+  status: 'Drafting' | 'In Review' | 'Verified' | 'Submitted';
+  dateAdded: string;
+}
+
+export type DocCategory = 'study_abroad' | 'visa' | 'travel' | 'cv' | 'moi' | 'itinerary';
+
+export interface DocTool {
+  id: string;
+  name: string;
+  category: DocCategory;
+  description: string;
+  iconName: string;
+}
