@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, FileText, ArrowUpRight, Sparkles } from 'lucide-react';
+import { Menu, X, FileText, ArrowUpRight, Sparkles, LayoutDashboard } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
 interface NavbarProps {
   onOpenResume: () => void;
+  onOpenAdminDesk?: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
+export const Navbar: React.FC<NavbarProps> = ({ onOpenResume, onOpenAdminDesk }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
@@ -122,6 +123,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
 
         {/* Right Action Buttons */}
         <div className="hidden sm:flex items-center gap-2.5">
+          {onOpenAdminDesk && (
+            <button
+              id="nav-admin-desk-btn"
+              onClick={onOpenAdminDesk}
+              className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-indigo-300 bg-indigo-950/80 hover:bg-indigo-900 hover:text-white rounded-lg border border-indigo-700/60 transition-all shadow-sm"
+              title="Admin Dashboard -> Application Desk"
+            >
+              <LayoutDashboard className="w-3.5 h-3.5 text-indigo-400" />
+              <span>Application Desk</span>
+            </button>
+          )}
+
           <button
             id="nav-resume-btn"
             onClick={onOpenResume}
