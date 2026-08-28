@@ -18,9 +18,10 @@ import { PERSONAL_INFO } from '../data/portfolioData';
 interface HeroProps {
   onOpenResume: () => void;
   onSelectProject: (projectId: string) => void;
+  onOpenApplicationDesk?: () => void;
 }
 
-export const Hero: React.FC<HeroProps> = ({ onOpenResume, onSelectProject }) => {
+export const Hero: React.FC<HeroProps> = ({ onOpenResume, onSelectProject, onOpenApplicationDesk }) => {
   const [activeTab, setActiveTab] = useState<'seemigo' | 'architecture' | 'disciplines'>('seemigo');
 
   return (
@@ -164,10 +165,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume, onSelectProject }) => 
                   </div>
 
                   <button
-                    onClick={() => onSelectProject('seemigo')}
-                    className="text-[11px] font-mono px-2.5 py-1 rounded bg-blue-950 text-blue-300 hover:bg-blue-900/60 border border-blue-800/60 transition-colors flex items-center gap-1"
+                    onClick={() => onOpenApplicationDesk ? onOpenApplicationDesk() : onSelectProject('seemigo')}
+                    className="text-[11px] font-mono px-2.5 py-1 rounded bg-indigo-950 text-indigo-300 hover:bg-indigo-900/60 border border-indigo-800/60 transition-colors flex items-center gap-1 font-semibold"
                   >
-                    <span>View System</span>
+                    <span>Launch Desk</span>
                     <ArrowRight className="w-3 h-3" />
                   </button>
                 </div>

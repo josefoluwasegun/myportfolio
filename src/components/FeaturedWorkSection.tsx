@@ -15,12 +15,17 @@ import {
 } from 'lucide-react';
 import { PROJECTS } from '../data/portfolioData';
 import { Project } from '../types';
+import { ApplicationDeskTab } from '../types/applicationDesk';
 
 interface FeaturedWorkSectionProps {
   onSelectProject: (projectId: string) => void;
+  onOpenApplicationDesk?: (tab?: ApplicationDeskTab) => void;
 }
 
-export const FeaturedWorkSection: React.FC<FeaturedWorkSectionProps> = ({ onSelectProject }) => {
+export const FeaturedWorkSection: React.FC<FeaturedWorkSectionProps> = ({
+  onSelectProject,
+  onOpenApplicationDesk
+}) => {
   const seemigoProject = PROJECTS.find((p) => p.id === 'seemigo')!;
   const otherProjects = PROJECTS.filter((p) => p.id !== 'seemigo');
 
@@ -122,18 +127,25 @@ export const FeaturedWorkSection: React.FC<FeaturedWorkSectionProps> = ({ onSele
 
                 {/* CTAs */}
                 <div className="pt-4 flex flex-wrap items-center gap-4">
+                  {onOpenApplicationDesk && (
+                    <button
+                      id="seemigo-launch-app-desk-btn"
+                      onClick={() => onOpenApplicationDesk('universities')}
+                      className="flex items-center gap-2.5 px-6 py-3.5 text-sm font-bold text-white bg-gradient-to-r from-indigo-600 via-sky-600 to-blue-600 hover:from-indigo-500 hover:to-blue-500 rounded-xl shadow-xl shadow-indigo-600/30 transition-all hover:scale-[1.02]"
+                    >
+                      <Sparkles className="w-4 h-4 text-sky-300 animate-pulse" />
+                      <span>Launch SEEMIGO Application Desk</span>
+                      <ArrowRight className="w-4 h-4" />
+                    </button>
+                  )}
+
                   <button
                     id="seemigo-view-case-study-btn"
                     onClick={() => onSelectProject('seemigo')}
-                    className="flex items-center gap-2 px-6 py-3.5 text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-500 rounded-xl shadow-lg shadow-indigo-600/25 transition-all hover:scale-[1.02]"
+                    className="flex items-center gap-2 px-5 py-3.5 text-sm font-semibold text-slate-200 bg-slate-900/90 hover:bg-slate-800 hover:text-white rounded-xl border border-slate-700/80 transition-all"
                   >
-                    <span>Read Full SEEMIGO Case Study</span>
-                    <ArrowRight className="w-4 h-4" />
+                    <span>Read Full Case Study</span>
                   </button>
-
-                  <div className="text-xs text-slate-400 font-mono">
-                    Includes Architecture, UI Decisions & AI Workflow
-                  </div>
                 </div>
               </div>
 
